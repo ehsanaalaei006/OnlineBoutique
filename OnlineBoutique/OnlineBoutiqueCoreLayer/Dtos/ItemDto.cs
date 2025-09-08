@@ -19,7 +19,8 @@ namespace OnlineBoutiqueCoreLayer.Dtos
         public int QuantityInStock { get; set; } = 0;
         public string Size { get; set; }
         public string Color { get; set; }
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
+        public string ImageName { get; set; }
 
         public int CategoryId { get; set; }
     }

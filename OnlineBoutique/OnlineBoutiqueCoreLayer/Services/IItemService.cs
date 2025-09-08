@@ -1,4 +1,5 @@
-﻿using OnlineBoutiqueDataLayer.Entities;
+﻿using OnlineBoutiqueCoreLayer.Dtos;
+using OnlineBoutiqueDataLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

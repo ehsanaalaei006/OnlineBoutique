@@ -106,9 +106,22 @@ namespace OnlineBoutiqueAdmin.Controllers
             {
                 return NotFound();
             }
+
+            var itemDto = new ItemDto
+            {
+                CategoryId = item.CategoryId,
+                Size = item.Size,
+                QuantityInStock = item.QuantityInStock,
+                Color = item.Color,
+                Price = item.Price,
+                Description = item.Description,
+                Name = item.Name,
+                ImageName = item.ImageUrl
+            };
+
             var categories = await _categoryService.GetAllCategoriesAndChildrenAsync();
             ViewData["CategoryId"] = new SelectList(categories, "Id", "Name", item.CategoryId);
-            return View(item);
+            return View(itemDto);
         }
 
         // POST: Items/Edit/5
@@ -116,32 +129,54 @@ namespace OnlineBoutiqueAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,QuantityInStock,Size,Color,ImageUrl,CategoryId")] Item item)
+        public async Task<IActionResult> Edit(int id,ItemDto itemDto)
         {
-            if (id != item.Id)
+            if (id != itemDto.Id)
             {
                 return NotFound();
             }
 
             //if (ModelState.IsValid)
             //{
-                
+
             //}
-            try
+            
+            var existingItem = await _service.GetItemByIdAsync(id);
+            var item = new Item
             {
-                await _service.UpdateItemAsync(id, item);
+                Id = itemDto.Id,
+                Name = itemDto.Name,
+                Description = itemDto.Description,
+                CategoryId = itemDto.CategoryId,
+                Size = itemDto.Size,
+                QuantityInStock = itemDto.QuantityInStock,
+                Color = itemDto.Color,
+                Price = itemDto.Price
+            };
+            if (itemDto.Image != null) {
+                item.ImageUrl = await _fileService.SaveFileAsync(itemDto.Image);
             }
-            catch (DbUpdateConcurrencyException)
+            else
             {
-                if (!ItemExists(item.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                item.ImageUrl = existingItem.ImageUrl;
             }
+
+
+                try
+                {
+                    await _service.UpdateItemAsync(id, item);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ItemExists(itemDto.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
             return RedirectToAction(nameof(Index));
             //var categories = await _categoryService.GetAllCategoriesAndChildrenAsync();
             //ViewData["CategoryId"] = new SelectList(categories , "Id", "Name", item.CategoryId);
