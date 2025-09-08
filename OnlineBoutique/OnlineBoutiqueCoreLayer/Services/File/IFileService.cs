@@ -10,7 +10,7 @@ namespace OnlineBoutiqueCoreLayer.Services.File
     public interface IFileService
     {
         Task<string> SaveFileAsync(IFormFile file);
-        //bool DeleteFile(string relativePath);
+        bool DeleteFile(string imageName);
     }
 
 

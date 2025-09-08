@@ -154,6 +154,7 @@ namespace OnlineBoutiqueAdmin.Controllers
                 Price = itemDto.Price
             };
             if (itemDto.Image != null) {
+                _fileService.DeleteFile(existingItem.ImageUrl);
                 item.ImageUrl = await _fileService.SaveFileAsync(itemDto.Image);
             }
             else
@@ -209,6 +210,7 @@ namespace OnlineBoutiqueAdmin.Controllers
 
             if (item != null)
             {
+                _fileService.DeleteFile(item.ImageUrl);
                 await _service.DeleteItemAsync(id);
             }
 

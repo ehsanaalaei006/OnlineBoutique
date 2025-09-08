@@ -32,16 +32,17 @@ namespace OnlineBoutiqueCoreLayer.Services.File
             return uniqueName;
         }
 
-        //public bool DeleteFile(string relativePath)
-        //{
-        //    var fullPath = Path.Combine(Directory.GetCurrentDirectory(), relativePath.TrimStart('/').Replace("/", "\\"));
-        //    if (File.Exists(fullPath))
-        //    {
-        //        File.Delete(fullPath);
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        public bool DeleteFile(string imageName)
+        {
+            var fullPath = Path.Combine(_imagePath, imageName);
+            //var fullPath = Path.Combine(Directory.GetCurrentDirectory(), imageName.TrimStart('/').Replace("/", "\\"));
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+                return true;
+            }
+            return false;
+        }
     }
 
 
