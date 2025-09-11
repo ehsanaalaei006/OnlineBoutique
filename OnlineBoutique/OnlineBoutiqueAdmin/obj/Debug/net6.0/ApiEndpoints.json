@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "OnlineBoutiqueAdmin.Controllers.FileController",
+    "Method": "DownloadFile",
+    "RelativePath": "api/File/GetFile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

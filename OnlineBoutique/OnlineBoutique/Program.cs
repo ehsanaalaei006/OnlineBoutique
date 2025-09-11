@@ -11,7 +11,9 @@ builder.Services.AddRazorPages();
 
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<ItemService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

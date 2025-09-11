@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\items.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\items.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Item.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Item.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Item.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Item.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Item.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Products.cshtml",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml",
+              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Products.cshtml",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml*",
+              "RelativeToolTip": "OnlineBoutique\\Pages\\Products.cshtml*",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFQAAACDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-09T14:12:00.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEcAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-09T14:09:41.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Items.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Items.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Items.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Items.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Items.cshtml",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJUAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-09T14:07:14.339Z",
+              "WhenOpened": "2025-09-11T15:03:42.098Z",
               "EditorCaption": ""
             }
           ]

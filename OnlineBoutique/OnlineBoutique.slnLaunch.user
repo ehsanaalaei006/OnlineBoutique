@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "OnlineBoutique\\OnlineBoutique.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

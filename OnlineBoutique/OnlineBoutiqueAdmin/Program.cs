@@ -16,6 +16,15 @@ builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<ItemService>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<FileService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost",
+        policy => policy.WithOrigins("https://localhost:44359") // Razor Pages port
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
+
+// Use in middleware:
 
 var app = builder.Build();
 
@@ -26,7 +35,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseCors("AllowLocalhost");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

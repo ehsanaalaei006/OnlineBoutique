@@ -43,7 +43,7 @@
                 <input asp-for="Color" class="form-control" />
                 <span asp-validation-for="Color" class="text-danger"></span>
             </div>
-            <img src="/images/@Model.ImageName" width="200px" />
+            <img src="/api/File/GetFile?fileName=@Model.ImageName" width="200px" />
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
                 <input asp-for="Image" class="form-control" />

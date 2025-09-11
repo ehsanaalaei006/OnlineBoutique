@@ -79,8 +79,8 @@ namespace OnlineBoutiqueDataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.Property<int>("QuantityInStock")
                         .HasColumnType("int");

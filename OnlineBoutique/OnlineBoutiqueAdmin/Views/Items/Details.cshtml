@@ -50,7 +50,7 @@
             @Html.DisplayNameFor(model => model.ImageUrl)
         </dt>
         <dd class = "col-sm-10">
-            <img src="/images/@Model.ImageUrl" width="200px" />
+            <img src="/api/File/GetFile?fileName=@Model.ImageUrl" width="200px" />
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Category)

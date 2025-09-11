@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace OnlineBoutique.Pages
 {
-    public class ItemsModel : PageModel
+    public class ProductModel : PageModel
     {
         public void OnGet()
         {
