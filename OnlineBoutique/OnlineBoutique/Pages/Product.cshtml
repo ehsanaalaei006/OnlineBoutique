@@ -1,4 +1,98 @@
 ﻿@page
 @model OnlineBoutique.Pages.ProductModel
 @{
+
+
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <!-- Product Image -->
+                <div class="col-lg-5">
+                    <div class="card shadow-sm border-0">
+                        <img class="card-img-top img-fluid rounded"
+                             src="https://localhost:7049/api/File/GetFile?fileName=@Model.item.ImageUrl"
+                             alt="@Model.item.Name"
+                             id="product-detail">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title fw-bold mb-3">@Model.item.Name</h2>
+                            <p class="h4 text-success mb-4">قیمت: @Model.item.Price تومان</p>
+
+                            <div class="mb-3">
+                                <span class="fw-semibold">برند:</span>
+                                <span class="text-muted ms-2">پوشاک آسان</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <span class="fw-semibold">رنگ‌های موجود:</span>
+                                <span class="text-muted ms-2">@Model.item.Color</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <h6 class="fw-semibold">توضیحات محصول:</h6>
+                                <p class="text-black">@Model.item.Description</p>
+                            </div>
+
+                            <!-- Add to Cart Form -->
+                            <form method="post" asp-page-handler="AddToCart">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="product-size" class="form-label fw-semibold">سایز</label>
+                                        <select name="product-size" id="product-size" class="form-select">
+                                            @foreach (var size in Model.itemSizes)
+                                            {
+                                                <option value="@size">@size</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="product-quantity" class="form-label fw-semibold">تعداد</label>
+                                        <input type="number" name="product-quantity" id="product-quantity"
+                                               class="form-control" value="1" min="1" />
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-success w-100 py-2">
+                                        افزودن به سبد خرید
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Close Content -->
+    <!-- Start Article -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-left p-2 pb-3">
+                <h4>محصولات مرتبط</h4>
+            </div>
+
+            <!--Start Carousel Wrapper-->
+            <div id="carousel-related-product">
+
+                
+
+             </div>   
+
+
+        </div>
+    </section>
+    <!-- End Article -->
+
+
+
+
 }

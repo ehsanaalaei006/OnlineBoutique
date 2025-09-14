@@ -11,6 +11,7 @@ namespace OnlineBoutiqueCoreLayer.Services
     public interface IItemService
     {
         Task<IEnumerable<Item>> GetAllItemsAsync();
+
         Task<Item> GetItemByIdAsync(int id);
         Task<IEnumerable<Item>> GetItemsByCategoryAsync(int categoryId);
         Task<bool> CreateItemAsync(Item item);

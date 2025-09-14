@@ -19,7 +19,7 @@
                         @foreach (var category in Model.Categories)
                         {
                             <li class="mb-3">
-                                <a asp-page="/Products" asp-route-id="@category.Id" class="text-decoration-none fw-bold text-dark h5">
+                                <a asp-page="/Products" asp-route-categoryid="@category.Id" class="text-decoration-none fw-bold text-dark h5">
                                     @category.Name
                                 </a>
 
@@ -29,7 +29,7 @@
                                         @foreach (var child in category.Children)
                                         {
                                             <li class="mb-1">
-                                                <a asp-page="/Products" asp-route-id="@child.Id" class="text-decoration-none .text-muted small">
+                                                <a asp-page="/Products" asp-route-categoryid="@child.Id" class="text-decoration-none text-muted small">
                                                     @child.Name
                                                 </a>
                                             </li>
@@ -54,58 +54,23 @@
                         </div>
                         
                     </div>
-                    <div class="row">
-
-                        @foreach(var item in Model.Items)
-                        {
-                            <div class="col-md-4">
-                                <div class="card mb-4 product-wap rounded-0">
-                                    <div class="card rounded-0" onclick="location.href='@Url.Page("/Product", null, new { itemid = item.Id })'" style="cursor:pointer;">
-                                        <img class="card-img rounded-0 img-fluid"
-                                             src="https://localhost:7049/api/File/GetFile?fileName=@item.ImageUrl"
-                                             alt="@item.Name" />
-
-                                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                            <ul class="list-unstyled padd-r-0">
-                                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="card-body text-center px-3 py-4">
-                                        <h5 class="card-title mb-2">
-                                            <a asp-page="product" asp-route-itemid="@item.Id" class="text-decoration-none text-dark fw-semibold">
-                                                @item.Name
-                                            </a>
-                                        </h5>
-
-                                        <p class="mb-1 text-muted small">
-                                            Size: <span class="fw-medium">@item.Size</span>
-                                        </p>
-
-                                        <p class="mb-0 fs-5 text-success fw-bold">
-                                            @item.Price
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-
-                        
+                    <div id="product-grid">
+                        @await Html.PartialAsync("_ProductGridPartial", Model.PagedItems)
                     </div>
-                    <div div="row">
-                        <ul class="pagination pagination-lg justify-content-end">
-                            <li class="page-item disabled">
-                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
-                            </li>
+
+                    <nav>
+                        <ul class="pagination pagination-lg justify-content-center">
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="#" data-page="@i" data-category="@Model.CurrentCategoryId">@i</a>
+                                </li>
+                            }
                         </ul>
-                    </div>
+                    </nav>
+
+
+
                 </div>
 
             </div>
@@ -117,4 +82,29 @@
 
 
 
+
+
+
 }
+
+
+ <script>
+                document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('click', function (e) {
+                const link = e.target.closest('.page-link');
+                if (link) {
+                    e.preventDefault();
+
+                    const page = link.dataset.page;
+                    const categoryId = link.dataset.category;
+
+                    fetch(`/Products?handler=ProductGrid&pageId=${page}&categoryId=${categoryId}`)
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('product-grid').innerHTML = html;
+                        });
+                }
+            });
+        });
+</script>
+

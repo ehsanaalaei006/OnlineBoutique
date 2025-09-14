@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using OnlineBoutiqueCoreLayer.Dtos;
 using OnlineBoutiqueDataLayer.Context;
 using OnlineBoutiqueDataLayer.Entities;
+using System.Drawing.Printing;
 
 namespace OnlineBoutiqueCoreLayer.Services
 {
@@ -218,5 +219,6 @@ namespace OnlineBoutiqueCoreLayer.Services
                 return false;
             }
         }
+
     }
 }

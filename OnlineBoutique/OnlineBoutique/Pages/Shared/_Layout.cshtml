@@ -51,8 +51,8 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                زی
+            <a class="navbar-brand text-success logo h1 align-self-center" asp-page="Index">
+                آوین
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,16 +63,13 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">خانه</a>
+                            <a class="nav-link" asp-page="Index">خانه</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">درباره</a>
+                            <a class="nav-link" asp-page="/Products">فروشگاه</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Items">فروشگاه</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">تماس</a>
+                            <a class="nav-link" asp-page="Privacy">درباره</a>
                         </li>
                     </ul>
                 </div>
@@ -134,11 +131,11 @@
             <div class="row">
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">فروشگاه زی</h2>
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">فروشگاه آوین</h2>
                     <ul class="list-unstyled text-light footer-link-list padd-r-0">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            تهران ، کریم خان
+                            قم , بلوار جمهوری
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
@@ -151,24 +148,13 @@
                     </ul>
                 </div>
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">محصولات</h2>
-                    <ul class="list-unstyled text-light footer-link-list padd-r-0">
-                        <li><a class="text-decoration-none" href="#">لاکچری</a></li>
-                        <li><a class="text-decoration-none" href="#">لباس ورزشی</a></li>
-                        <li><a class="text-decoration-none" href="#">کفش مردانه</a></li>
-                        <li><a class="text-decoration-none" href="#">کفش زنانه</a></li>
-                        <li><a class="text-decoration-none" href="#">لباس محبوب</a></li>
-                        <li><a class="text-decoration-none" href="#">لوازم بدنسازی</a></li>
-                        <li><a class="text-decoration-none" href="#">کفش ورزشی</a></li>
-                    </ul>
-                </div>
+
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">اطلاعات بیشتر</h2>
                     <ul class="list-unstyled text-light footer-link-list padd-r-0">
-                        <li><a class="text-decoration-none" href="#">خانه</a></li>
-                        <li><a class="text-decoration-none" href="#">درباره ما</a></li>
+                        <li><a class="text-decoration-none" asp-page="Index">خانه</a></li>
+                        <li><a class="text-decoration-none" asp-page="Privacy">درباره ما</a></li>
                         <li><a class="text-decoration-none" href="#">آدرس فروشگاه</a></li>
                         <li><a class="text-decoration-none" href="#">سوالات متداول</a></li>
                         <li><a class="text-decoration-none" href="#">تماس با ما</a></li>
@@ -196,13 +182,6 @@
                             <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
                         </li>
                     </ul>
-                </div>
-                <div class="col-auto">
-                    <label class="sr-only" for="subscribeEmail">آدرس ایمیل</label>
-                    <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="آدرس ایمیل">
-                        <div class="input-group-text btn-success text-light">عضویت</div>
-                    </div>
                 </div>
             </div>
         </div>

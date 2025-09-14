@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OnlineBoutiqueCoreLayer.Services;
 using OnlineBoutiqueDataLayer.Entities;
-using System.Threading.Tasks;
 
 namespace OnlineBoutique.Pages
 {
@@ -11,37 +10,62 @@ namespace OnlineBoutique.Pages
         private readonly IItemService _itemService;
         private readonly ICategoryService _categoryService;
 
-
-        public ProductsModel(ItemService itemService, ICategoryService categoryService)
+        public ProductsModel(IItemService itemService, ICategoryService categoryService)
         {
             _itemService = itemService;
             _categoryService = categoryService;
         }
 
-
-        public List<Item> Items { get; set; }
-        public List<Category> Categories { get; set; }
-
+        // Public properties for Razor
+        public List<Item> PagedItems { get; set; } = new();
+        public List<Category> Categories { get; set; } = new();
         public string? CategoryName { get; set; }
-        public async Task OnGetAsync(int? id)
+
+        public int TotalPages { get; set; }
+        public int CurrentPage { get; set; }
+        public int? CurrentCategoryId { get; set; }
+
+        private const int PageSize = 3;
+
+        // Initial page load
+        public async Task OnGetAsync(int? categoryId, int pageId = 1)
         {
-            //items
-            if (id.HasValue)
+            CurrentCategoryId = categoryId;
+            CurrentPage = pageId;
+
+            var allItems = categoryId.HasValue
+                ? await _itemService.GetItemsByCategoryAsync(categoryId.Value)
+                : await _itemService.GetAllItemsAsync();
+
+            if (categoryId.HasValue)
             {
-                var category = await _categoryService.GetCategoryByIdAsync(id.Value);
-                CategoryName = category.Name;
-                Items = (await _itemService.GetItemsByCategoryAsync(id.Value)).ToList();
-            }
-            else
-            {
-                Items = (await _itemService.GetAllItemsAsync()).ToList();
+                var category = await _categoryService.GetCategoryByIdAsync(categoryId.Value);
+                CategoryName = category?.Name;
             }
 
+            TotalPages = (int)Math.Ceiling(allItems.Count() / (double)PageSize);
+            PagedItems = allItems
+                .Skip((pageId - 1) * PageSize)
+                .Take(PageSize)
+                .ToList();
 
-
-            //categories
             Categories = (await _categoryService.GetAllCategoriesAsync()).ToList();
+        }
 
+        // AJAX pagination handler
+        public async Task<IActionResult> OnGetProductGridAsync(int? categoryId, int pageId = 1)
+        {
+            var allItems = categoryId.HasValue
+                ? await _itemService.GetItemsByCategoryAsync(categoryId.Value)
+                : await _itemService.GetAllItemsAsync();
+
+            var pagedItems = allItems
+                .Skip((pageId - 1) * PageSize)
+                .Take(PageSize)
+                .ToList();
+
+            return Partial("_ProductGridPartial", pagedItems);
         }
     }
 }
+
