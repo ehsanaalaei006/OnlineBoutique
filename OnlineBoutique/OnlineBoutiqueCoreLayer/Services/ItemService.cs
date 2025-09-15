@@ -24,7 +24,7 @@ namespace OnlineBoutiqueCoreLayer.Services
             {
                 return await _context.Items
                     .Include(i => i.Category)
-                    .OrderBy(i => i.Name)
+                    .OrderByDescending(i => i.Id)
                     .ToListAsync();
             }
             catch (Exception ex)
@@ -33,6 +33,23 @@ namespace OnlineBoutiqueCoreLayer.Services
                 throw;
             }
         }
+
+        public async Task<IEnumerable<Item>> GetItemsBySearchAsync(string q)
+        {
+            try
+            {
+                return await _context.Items
+                    .Where(i => i.Name.Contains(q))
+                    .Include(i => i.Category)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while getting items by search");
+                throw;
+            }
+        }
+
 
         public async Task<Item> GetItemByIdAsync(int id)
         {
@@ -190,6 +207,7 @@ namespace OnlineBoutiqueCoreLayer.Services
             }
         }
 
+        
         public async Task<bool> UpdateItemStockAsync(int id, int quantityChange)
         {
             try

@@ -24,40 +24,60 @@ namespace OnlineBoutique.Pages
         public int TotalPages { get; set; }
         public int CurrentPage { get; set; }
         public int? CurrentCategoryId { get; set; }
-
+        public string? CurrentSearch { get; set; }
         private const int PageSize = 3;
 
         // Initial page load
-        public async Task OnGetAsync(int? categoryId, int pageId = 1)
+        public async Task OnGetAsync(int? categoryId , string? q)
         {
-            CurrentCategoryId = categoryId;
-            CurrentPage = pageId;
 
-            var allItems = categoryId.HasValue
-                ? await _itemService.GetItemsByCategoryAsync(categoryId.Value)
-                : await _itemService.GetAllItemsAsync();
+
+            var allItems = new List<Item>();
 
             if (categoryId.HasValue)
             {
                 var category = await _categoryService.GetCategoryByIdAsync(categoryId.Value);
                 CategoryName = category?.Name;
+                allItems = (await _itemService.GetItemsByCategoryAsync(categoryId.Value)).ToList();
+            }
+            else if (q != null)
+            {
+                allItems= (await _itemService.GetItemsBySearchAsync(q)).ToList();
+            }
+            else
+            {
+                allItems = (await _itemService.GetAllItemsAsync()).ToList();
             }
 
             TotalPages = (int)Math.Ceiling(allItems.Count() / (double)PageSize);
             PagedItems = allItems
-                .Skip((pageId - 1) * PageSize)
                 .Take(PageSize)
                 .ToList();
 
+            CurrentSearch = q;
+            CurrentCategoryId = categoryId;
             Categories = (await _categoryService.GetAllCategoriesAsync()).ToList();
         }
 
         // AJAX pagination handler
-        public async Task<IActionResult> OnGetProductGridAsync(int? categoryId, int pageId = 1)
+        public async Task<IActionResult> OnGetProductGridAsync(int? categoryId  ,string? q, int pageId = 1)
         {
-            var allItems = categoryId.HasValue
-                ? await _itemService.GetItemsByCategoryAsync(categoryId.Value)
-                : await _itemService.GetAllItemsAsync();
+            var allItems = new List<Item>();
+
+            if (categoryId.HasValue)
+            {
+                var category = await _categoryService.GetCategoryByIdAsync(categoryId.Value);
+                CategoryName = category?.Name;
+                allItems = (await _itemService.GetItemsByCategoryAsync(categoryId.Value)).ToList();
+            }
+            else if (q != null)
+            {
+                allItems = (await _itemService.GetItemsBySearchAsync(q)).ToList();
+            }
+            else
+            {
+                allItems = (await _itemService.GetAllItemsAsync()).ToList();
+            }
 
             var pagedItems = allItems
                 .Skip((pageId - 1) * PageSize)

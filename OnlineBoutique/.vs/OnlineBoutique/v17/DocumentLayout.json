@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\products.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\products.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\_productgridpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\_productgridpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_ProductGridPartial.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-14T13:49:46.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Products.cshtml.cs",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml.cs",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Products.cshtml.cs",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml.cs",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Products.cshtml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAlwCEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T11:48:26.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Products.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Products.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Products.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGQAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-13T11:42:48.557Z",
-              "EditorCaption": ""
             }
           ]
         }

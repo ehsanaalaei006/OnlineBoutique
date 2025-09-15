@@ -63,7 +63,7 @@
                             @for (int i = 1; i <= Model.TotalPages; i++)
                             {
                                 <li class="page-item">
-                                    <a class="page-link" href="#" data-page="@i" data-category="@Model.CurrentCategoryId">@i</a>
+                                    <a class="page-link" href="#" data-page="@i" data-search="@Model.CurrentSearch" data-category="@Model.CurrentCategoryId">@i</a>
                                 </li>
                             }
                         </ul>
@@ -97,8 +97,8 @@
 
                     const page = link.dataset.page;
                     const categoryId = link.dataset.category;
-
-                    fetch(`/Products?handler=ProductGrid&pageId=${page}&categoryId=${categoryId}`)
+                    const search = link.dataset.search;
+                    fetch(`/Products?handler=ProductGrid&pageId=${page}&categoryId=${categoryId}&q=${search}`)
                         .then(response => response.text())
                         .then(html => {
                             document.getElementById('product-grid').innerHTML = html;
