@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1Byb2R1Y3RHcmlkUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects/OnlineBoutique/OnlineBoutique/OnlineBoutique/Pages/_RelatedProductsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1JlbGF0ZWRQcm9kdWN0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/OnlineBoutique/OnlineBoutique/OnlineBoutique/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
