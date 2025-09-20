@@ -1,3 +1,135 @@
-/*
-Custom Css
-*/
+
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.ad-banner {
+    width: 100%;
+    height: 240px;
+    background: url('https://images.unsplash.com/photo-1515165562835-cbdf6c2b5d07?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+    .ad-banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.35);
+        border-radius: 16px;
+        z-index: 1;
+    }
+
+.ad-banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.product-slider {
+    direction: rtl;
+    scrollbar-color: #e0e0e0 #fafbfc;
+    scrollbar-width: thin;
+}
+
+    .product-slider::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .product-slider::-webkit-scrollbar-thumb {
+        background: #e0e0e0;
+        border-radius: 4px;
+    }
+
+.product-card {
+    min-width: 185px;
+    max-width: 220px;
+    transition: box-shadow .2s, transform .15s;
+}
+
+    .product-card:hover {
+        box-shadow: 0 6px 36px rgba(60,60,60,0.19);
+        transform: translateY(-7px) scale(1.03);
+    }
+
+.product-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 7px;
+    background: #eee;
+    transition: box-shadow .2s;
+}
+
+.card-header {
+    font-size: 1.08rem;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    transition: box-shadow .2s;
+}
+
+.card-title {
+    font-size: 1.12rem;
+    font-weight: bold;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+    font-size: .93rem;
+}
+
+.category-section {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04);
+    padding: 1.1rem 1.1rem 0.7rem 1.1rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .product-card {
+        min-width: 170px;
+    }
+}
+
+@media (max-width: 991px) {
+    .ad-banner {
+        font-size: 1.4rem;
+        height: 160px;
+    }
+
+    .product-img {
+        height: 100px;
+    }
+
+    .category-section {
+        padding: .7rem .5rem .5rem .5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-card {
+        min-width: 70vw;
+    }
+
+    .ad-banner {
+        font-size: 1rem;
+    }
+}

@@ -4,191 +4,146 @@
     ViewData["Title"] = "Home page";
 }
 
-<!-- Start Banner Hero -->
-<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="img-fluid" src="~/assets/img/banner_img_01.jpg" alt="">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left align-self-center">
-                            <h1 class="h1 text-success"><b>زی</b> تجارت الکترونیک</h1>
-                            <h3 class="h2">لورم ایپسوم متن ساختگی با</h3>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آن چنان که لازم است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="img-fluid" src="~/assets/img/banner_img_02.jpg" alt="">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 class="h1">لورم ساختگی تولید</h1>
-                            <h3 class="h2">لورم ایپسوم متن ساختگی با تولید</h3>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آن چنان که لازم است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="img-fluid" src="~/assets/img/banner_img_03.jpg" alt="">
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 class="h1">لورم ایپسوم متن</h1>
-                            <h3 class="h2">لورم ایپسوم متن ساختگی با تولید</h3>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آن چنان که لازم است
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<style>
+    .ad-banner {
+        width: 100%;
+        height: 240px;
+        background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2.2rem;
+        font-weight: bold;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+
+        .ad-banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.35);
+            border-radius: 16px;
+            z-index: 1;
+        }
+
+    .ad-banner-content {
+        position: relative;
+        z-index: 2;
+    }
+    @@media (max-width: 991px) {
+        .ad-banner
+
+    {
+        font-size: 1.4rem;
+        height: 160px;
+    }
+    }
+    @@media (max-width: 767px) {
+    .ad-banner {
+        font-size: 1rem;
+    }
+    }
+</style>
+
+
+<div class="container mt-4">
+    <div class="ad-banner mb-5">
+        <div class="ad-banner-content">
+            جدیدترین محصولات <span class="text-warning">آوین</span> را کشف کنید!
         </div>
     </div>
-    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-        <i class="fas fa-chevron-left"></i>
-    </a>
-    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-        <i class="fas fa-chevron-right"></i>
-    </a>
+
+    <!-- Products By Category - Creative Slider Style -->
+    <section class="mb-5">
+        <h2 class="mb-4 fw-bold text-success">جدیدترین دسته‌بندی‌ها</h2>
+        @foreach (var category in Model.categories)
+        {
+            <div class="category-section mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-cpu text-primary ms-2"></i>@category.Name</h5>
+                    <a asp-page="/Products" asp-route-categoryid="@category.Id" class="btn btn-sm btn-outline-primary rounded-pill">نمایش بیشتر</a>
+                </div>
+                <div class="product-slider row flex-nowrap overflow-auto g-3 pb-2">
+
+                    @foreach (var item in category.Items.Take(4))
+                    {
+                        <div class="col-md-3 product-card mb-3">
+                            <div class="card product-wap rounded-0">
+                                <div class="card rounded-0" onclick="location.href='@Url.Page("/Product", null, new { itemid = item.Id })'" style="cursor:pointer;">
+                                    <img class="card-img rounded-0 img-fluid"
+                                         src="https://localhost:7049/api/File/GetFile?fileName=@item.ImageUrl"
+                                         alt="@item.Name" />
+                                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                        <ul class="list-unstyled padd-r-0">
+                                            <li><a class="btn btn-success text-white"><i class="far fa-heart"></i></a></li>
+                                            <li><a class="btn btn-success text-white mt-2"><i class="fas fa-cart-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center px-3 py-4">
+                                    <h5 class="card-title mb-2">
+                                        <a asp-page="product" asp-route-itemid="@item.Id" class="text-decoration-none text-dark fw-semibold">
+                                            @item.Name
+                                        </a>
+                                    </h5>
+                                    <p class="mb-1 text-muted small">سایز: <span class="fw-medium">@item.Size</span></p>
+                                    <p class="mb-0 fs-5 text-success fw-bold">@item.Price تومان</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        
+        
+    </section>
+
+    <!-- Newest Products -->
+    <section class="mb-5">
+        <h2 class="mb-4 fw-bold text-success">جدیدترین محصولات</h2>
+        <div class="row g-4">
+            @foreach (var item in Model.newestItems)
+            {
+                <div class="col-md-3 product-card mb-3">
+                    <div class="card product-wap rounded-0">
+                        <div class="card rounded-0" onclick="location.href='@Url.Page("/Product", null, new { itemid = item.Id })'" style="cursor:pointer;">
+                            <img class="card-img rounded-0 img-fluid"
+                                 src="https://localhost:7049/api/File/GetFile?fileName=@item.ImageUrl"
+                                 alt="@item.Name" />
+                            <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                <ul class="list-unstyled padd-r-0">
+                                    <li><a class="btn btn-success text-white"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2"><i class="fas fa-cart-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body text-center px-3 py-4">
+                            <h5 class="card-title mb-2">
+                                <a asp-page="product" asp-route-itemid="@item.Id" class="text-decoration-none text-dark fw-semibold">
+                                    @item.Name
+                                </a>
+                            </h5>
+                            <p class="mb-1 text-muted small">سایز: <span class="fw-medium">@item.Size</span></p>
+                            <p class="mb-0 fs-5 text-success fw-bold">@item.Price تومان</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+
+
+
 </div>
-<!-- End Banner Hero -->
-<!-- Start Categories of The Month -->
-<section class="container py-5">
-    <div class="row text-center pt-3">
-        <div class="col-lg-6 m-auto">
-            <h1 class="h1">دسته بندی های ماه</h1>
-            <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر.
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-4 p-5 mt-3">
-            <a href="#"><img src="~/assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
-            <h5 class="text-center mt-3 mb-3">ساعت</h5>
-            <p class="text-center"><a class="btn btn-success">برو فروشگاه</a></p>
-        </div>
-        <div class="col-12 col-md-4 p-5 mt-3">
-            <a href="#"><img src="~/assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
-            <h2 class="h5 text-center mt-3 mb-3">کفش</h2>
-            <p class="text-center"><a class="btn btn-success">برو فروشگاه</a></p>
-        </div>
-        <div class="col-12 col-md-4 p-5 mt-3">
-            <a href="#"><img src="~/assets/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
-            <h2 class="h5 text-center mt-3 mb-3">تجهیزات جانبی</h2>
-            <p class="text-center"><a class="btn btn-success">برو فروشگاه</a></p>
-        </div>
-    </div>
-</section>
-<!-- End Categories of The Month -->
-<!-- Start Featured Product -->
-<section class="bg-light">
-    <div class="container py-5">
-        <div class="row text-center py-3">
-            <div class="col-lg-6 m-auto">
-                <h1 class="h1">محصول ویژه</h1>
-                <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html">
-                        <img src="~/assets/img/feature_prod_01.jpg" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <ul class="list-unstyled d-flex justify-content-between padd-rl-0">
-                            <li>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                            </li>
-                            <li class="text-muted text-right">240,000</li>
-                        </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">باشگاه بدنسازی</a>
-                        <p class="card-text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .
-                        </p>
-                        <p class="text-muted">نظرات (24)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html">
-                        <img src="~/assets/img/feature_prod_02.jpg" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <ul class="list-unstyled d-flex justify-content-between padd-rl-0">
-                            <li>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                                <i class="text-muted fa fa-star"></i>
-                            </li>
-                            <li class="text-muted text-right">480,000</li>
-                        </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">کفش نایک ابری</a>
-                        <p class="card-text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .
-                        </p>
-                        <p class="text-muted">نظرات (48)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card h-100">
-                    <a href="shop-single.html">
-                        <img src="~/assets/img/feature_prod_03.jpg" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <ul class="list-unstyled d-flex justify-content-between padd-rl-0">
-                            <li>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                                <i class="text-warning fa fa-star"></i>
-                            </li>
-                            <li class="text-muted text-right">360,000</li>
-                        </ul>
-                        <a href="shop-single.html" class="h2 text-decoration-none text-dark">کفش تابستانی آدیداس</a>
-                        <p class="card-text">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .
-                        </p>
-                        <p class="text-muted">نظرات (74)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Featured Product -->
+
+
