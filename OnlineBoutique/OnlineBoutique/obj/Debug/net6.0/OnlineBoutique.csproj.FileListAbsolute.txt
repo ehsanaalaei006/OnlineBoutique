@@ -78,3 +78,15 @@ D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\obj\Debug\net6.0\refint
 D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\obj\Debug\net6.0\OnlineBoutique.pdb
 D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\obj\Debug\net6.0\OnlineBoutique.genruntimeconfig.cache
 D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\obj\Debug\net6.0\ref\OnlineBoutique.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\Microsoft.Extensions.WebEncoders.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\System.Security.Cryptography.Xml.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Projects\OnlineBoutique\OnlineBoutique\OnlineBoutique\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

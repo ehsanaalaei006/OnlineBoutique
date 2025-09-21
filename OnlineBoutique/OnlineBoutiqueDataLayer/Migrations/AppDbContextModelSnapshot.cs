@@ -96,6 +96,33 @@ namespace OnlineBoutiqueDataLayer.Migrations
                     b.ToTable("Items");
                 });
 
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Category", b =>
                 {
                     b.HasOne("OnlineBoutiqueDataLayer.Entities.Category", "Parent")

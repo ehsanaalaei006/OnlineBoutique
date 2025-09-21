@@ -90,10 +90,20 @@
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark left-0">7</span>
-                    </a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-icon position-relative text-decoration-none ms-2" href="/Cart">
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark left-0">7</span>
+                        </a>
+                        <form method="post" asp-page="/Account/Logout" class="d-inline ms-2">
+                            <button type="submit" class="btn btn-outline-danger">خروج</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-primary ms-2" href="/Account/Login">ورود</a>
+                    }
                 </div>
             </div>
 
