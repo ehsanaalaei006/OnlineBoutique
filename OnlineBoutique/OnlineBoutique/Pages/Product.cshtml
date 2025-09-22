@@ -41,10 +41,14 @@
 
                             <!-- Add to Cart Form -->
                             <form method="post" asp-page-handler="AddToCart">
+                                <input type="hidden" name="productId" value="@Model.item.Id" />
+                                <input type="hidden" name="productName" value="@Model.item.Name" />
+                                <input type="hidden" name="unitPrice" value="@Model.item.Price" />
+
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="product-size" class="form-label fw-semibold">سایز</label>
-                                        <select name="product-size" id="product-size" class="form-select">
+                                        <select name="productSize" id="product-size" class="form-select">
                                             @foreach (var size in Model.itemSizes)
                                             {
                                                 <option value="@size">@size</option>
@@ -54,7 +58,7 @@
 
                                     <div class="col-md-6">
                                         <label for="product-quantity" class="form-label fw-semibold">تعداد</label>
-                                        <input type="number" name="product-quantity" id="product-quantity"
+                                        <input type="number" name="productQuantity" id="product-quantity"
                                                class="form-control" value="1" min="1" />
                                     </div>
                                 </div>
@@ -118,8 +122,27 @@
         </div>
     </section>
     <!-- End Article -->
-
-
+    <!-- Modal -->
+    <div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-body">
+                    <h5 class="mb-3 text-success">کالا با موفقیت به سبد خرید افزوده شد!</h5>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">باشه</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        @if (Model.AddToCartSuccess)
+        {
+            <script>
+                var addToCartModal = new bootstrap.Modal(document.getElementById('addToCartModal'));
+                addToCartModal.show();
+            </script>
+        }
+    }
 
 
 }

@@ -19,5 +19,6 @@ namespace OnlineBoutiqueDataLayer.Entities
 
         [Required]
         public string PasswordHash { get; set; }
+        public virtual Cart Cart { get; set; }
     }
 }

@@ -22,6 +22,63 @@ namespace OnlineBoutiqueDataLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Cart", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartId"), 1L, 1);
+
+                    b.Property<int>("TotalPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.CartItem", b =>
+                {
+                    b.Property<int>("CartItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartItemId"), 1L, 1);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UnitPrice")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartItemId");
+
+                    b.HasIndex("CartId");
+
+                    b.ToTable("CartItems");
+                });
+
             modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -123,6 +180,28 @@ namespace OnlineBoutiqueDataLayer.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Cart", b =>
+                {
+                    b.HasOne("OnlineBoutiqueDataLayer.Entities.User", "User")
+                        .WithOne("Cart")
+                        .HasForeignKey("OnlineBoutiqueDataLayer.Entities.Cart", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.CartItem", b =>
+                {
+                    b.HasOne("OnlineBoutiqueDataLayer.Entities.Cart", "Cart")
+                        .WithMany("Items")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+                });
+
             modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Category", b =>
                 {
                     b.HasOne("OnlineBoutiqueDataLayer.Entities.Category", "Parent")
@@ -143,11 +222,22 @@ namespace OnlineBoutiqueDataLayer.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Cart", b =>
+                {
+                    b.Navigation("Items");
+                });
+
             modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.Category", b =>
                 {
                     b.Navigation("Children");
 
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("OnlineBoutiqueDataLayer.Entities.User", b =>
+                {
+                    b.Navigation("Cart")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
