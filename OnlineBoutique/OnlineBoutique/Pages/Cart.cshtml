@@ -21,7 +21,7 @@
         <h2 class="mb-4 text-center">سبد خرید شما</h2>
         @if (Model.Cart.Items != null && Model.Cart.Items.Count > 0)
         {
-            <form method="post">
+            
                 <table class="table table-bordered cart-table bg-white">
                     <thead class="table-dark">
                         <tr>
@@ -41,18 +41,14 @@
                                 <td>@item.Size</td>
                                 <td>@item.UnitPrice.ToString("N0") تومان</td>
                                 <td>
-                                    <form method="post" asp-page-handler="Update" class="d-inline">
-                                        <input type="hidden" name="productId" value="@item.ProductId" />
-                                        <input type="hidden" name="size" value="@item.Size" />
-                                        <input type="number" name="amount" value="@item.Amount" min="1" style="width:70px;" class="form-control d-inline" />
-                                        <button type="submit" class="btn btn-sm btn-primary ms-2">بروزرسانی</button>
-                                    </form>
+                                    @item.Amount
                                 </td>
                                 <td>@item.TotalPrice.ToString("N0") تومان</td>
                                 <td>
                                     <form method="post" asp-page-handler="Delete" class="d-inline">
                                         <input type="hidden" name="productId" value="@item.ProductId" />
                                         <input type="hidden" name="size" value="@item.Size" />
+                                        <input type="hidden" name="amount" value="@item.Amount" />
                                         <button type="submit" class="btn btn-sm btn-danger">حذف</button>
                                     </form>
                                 </td>
@@ -60,11 +56,11 @@
                         }
                     </tbody>
                 </table>
-            </form>
             <div class="cart-summary mt-4">
                 <h5>مجموع سبد خرید: <span class="text-success">@Model.Cart.TotalPrice.ToString("N0") تومان</span></h5>
-                <button class="btn btn-success mt-3 w-100">تکمیل خرید</button>
+                <button class="btn btn-success mt-3 w-100" type="submit">تکمیل خرید</button>
             </div>
+            
         }
         else
         {

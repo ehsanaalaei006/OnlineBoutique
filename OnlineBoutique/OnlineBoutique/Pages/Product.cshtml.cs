@@ -64,8 +64,8 @@ namespace OnlineBoutique.Pages
             int userId = int.Parse(userIdClaim);
 
             // Call your cart service
+            await _itemService.UpdateItemStockAsync(productId, -productQuantity);
             _cartService.AddItem(userId, productId, productName, productSize, unitPrice, productQuantity);
-
             AddToCartSuccess = true;
             return RedirectToPage("Cart");
         }

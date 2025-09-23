@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineBoutiqueDataLayer.Context;
 using OnlineBoutiqueDataLayer.Entities;
+using System.Threading.Tasks;
 
 namespace OnlineBoutiqueCoreLayer.Services
 {
@@ -61,7 +62,7 @@ namespace OnlineBoutiqueCoreLayer.Services
             }
         }
 
-        public void DeleteItem(int userId, int productId, string size)
+        public async void DeleteItem(int userId, int productId, string size)
         {
             var cart = GetCart(userId);
             var item = cart?.Items.FirstOrDefault(i => i.ProductId == productId && i.Size == size);

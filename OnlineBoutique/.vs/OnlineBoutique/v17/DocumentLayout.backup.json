@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,21 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGAAAACJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-22T13:49:55.928Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"

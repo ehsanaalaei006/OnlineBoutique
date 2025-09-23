@@ -3,16 +3,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OnlineBoutiqueCoreLayer.Services;
 using OnlineBoutiqueDataLayer.Entities;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace OnlineBoutique.Pages
 {
     public class CartModel : PageModel
     {
         private readonly CartService _cartService;
+        private readonly ItemService _itemService;
 
-        public CartModel(CartService cartService)
+
+        public CartModel(CartService cartService, ItemService itemService)
         {
             _cartService = cartService;
+            _itemService = itemService;
         }
 
         [BindProperty]
@@ -32,23 +36,12 @@ namespace OnlineBoutique.Pages
             Cart = _cartService.GetCart(userId) ?? new Cart { Items = new List<CartItem>() };
         }
 
-        public IActionResult OnPostAdd(int productId, string productName, string size, int unitPrice, int amount)
-        {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            _cartService.AddItem(userId, productId, productName, size, unitPrice, amount);
-            return RedirectToPage();
-        }
 
-        public IActionResult OnPostUpdate(int productId, string size, int amount)
-        {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            _cartService.UpdateItemAmount(userId, productId, size, amount);
-            return RedirectToPage();
-        }
 
-        public IActionResult OnPostDelete(int productId, string size)
+        public async Task<IActionResult> OnPostDelete(int productId, string size , int amount)
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            await _itemService.UpdateItemStockAsync(productId, amount);
             _cartService.DeleteItem(userId, productId, size);
             return RedirectToPage();
         }
