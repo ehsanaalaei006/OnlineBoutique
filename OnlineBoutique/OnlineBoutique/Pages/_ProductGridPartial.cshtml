@@ -7,7 +7,7 @@
         <div class="col-md-4 product-card mb-4">
             <div class="card product-wap rounded-0">
                 <div class="card rounded-0" onclick="location.href='@Url.Page("/Product", null, new { itemid = item.Id })'" style="cursor:pointer;">
-                    <img class="card-img rounded-0 img-fluid"
+                    <img class="card-img rounded-0 img-fluid @(item.QuantityInStock == 0 ? "blur" : "")"
                          src="https://localhost:7049/api/File/GetFile?fileName=@item.ImageUrl"
                          alt="@item.Name" />
                     <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
@@ -24,7 +24,14 @@
                         </a>
                     </h5>
                     <p class="mb-1 text-muted small">سایز: <span class="fw-medium">@item.Size</span></p>
-                    <p class="mb-0 fs-5 text-success fw-bold">@item.Price تومان</p>
+                    @if (item.QuantityInStock == 0)
+                    {
+                        <p class="mb-0 fs-5 text-danger fw-bold">موجود نیست</p>
+                    }
+                    else
+                    {
+                        <p class="mb-0 fs-5 text-success fw-bold">@item.Price تومان</p>
+                    }
                 </div>
             </div>
         </div>
