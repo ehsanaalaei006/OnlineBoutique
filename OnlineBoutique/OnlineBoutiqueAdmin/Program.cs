@@ -14,6 +14,10 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<ItemService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<FileService>();
 builder.Services.AddCors(options =>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OnlineBoutiqueDataLayer.Entities.Cart>
+
+@{
+    ViewData["Title"] = "Carts";
+}
+
+<h1>Carts</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User name</th>
+            <th>User email</th>
+            <th>total price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cart in Model)
+        {
+            <tr>
+                <td>@cart.User.Name</td>
+                <td>@cart.User.Email</td>
+                <td>@cart.TotalPrice</td>
+                <td>
+                    <a asp-action="Details" asp-route-userId="@cart.UserId">Details</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

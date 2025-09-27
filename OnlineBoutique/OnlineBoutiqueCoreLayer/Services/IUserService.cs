@@ -11,5 +11,7 @@ namespace OnlineBoutiqueCoreLayer.Services
     {
         public Task<bool> RegisterAsync(string name, string email, string password);
         public Task<User> AuthenticateAsync(string email, string password);
+        public Task<List<User>> GetAllUsersAsync();
+        public Task<bool> DeleteUserAsync(int userId);
     }
 }

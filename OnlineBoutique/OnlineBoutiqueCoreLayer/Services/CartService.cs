@@ -14,6 +14,15 @@ namespace OnlineBoutiqueCoreLayer.Services
             _context = context;
         }
 
+        public List<Cart> GetAllCarts()
+        {
+            return _context.Carts
+                .Include(c => c.Items)
+                .Include(c => c.User)
+                .ToList();
+        }
+
+
         public Cart GetCart(int userId)
         {
             return _context.Carts

@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F8E93B45-463F-455A-8EFB-82E4DE90CDEE}|OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutiqueadmin\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F8E93B45-463F-455A-8EFB-82E4DE90CDEE}|OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj|solutionrelative:onlineboutiqueadmin\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A38DC-E58C-44E7-B743-052966091DC3}|OnlineBoutiqueCoreLayer\\OnlineBoutiqueCoreLayer.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutiquecorelayer\\services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A38DC-E58C-44E7-B743-052966091DC3}|OnlineBoutiqueCoreLayer\\OnlineBoutiqueCoreLayer.csproj|solutionrelative:onlineboutiquecorelayer\\services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8E93B45-463F-455A-8EFB-82E4DE90CDEE}|OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutiqueadmin\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8E93B45-463F-455A-8EFB-82E4DE90CDEE}|OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj|solutionrelative:onlineboutiqueadmin\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueAdmin\\Views\\Carts\\Index.cshtml",
+              "RelativeDocumentMoniker": "OnlineBoutiqueAdmin\\Views\\Carts\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueAdmin\\Views\\Carts\\Index.cshtml",
+              "RelativeToolTip": "OnlineBoutiqueAdmin\\Views\\Carts\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-27T09:08:24.287Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueAdmin\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "OnlineBoutiqueAdmin\\Controllers\\CartsController.cs",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueAdmin\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "OnlineBoutiqueAdmin\\Controllers\\CartsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAtwBIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T09:06:03.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueCoreLayer\\Services\\ICartService.cs",
+              "RelativeDocumentMoniker": "OnlineBoutiqueCoreLayer\\Services\\ICartService.cs",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueCoreLayer\\Services\\ICartService.cs",
+              "RelativeToolTip": "OnlineBoutiqueCoreLayer\\Services\\ICartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T09:06:00.97Z",
+              "EditorCaption": ""
             }
           ]
         }

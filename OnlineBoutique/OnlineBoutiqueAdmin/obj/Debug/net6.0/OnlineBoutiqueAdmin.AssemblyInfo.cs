@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineBoutiqueAdmin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fbc8ea7484481b7b2d20976ef7586effac0321f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed0d272b3465c440c316dd21b09bb48d86f86b2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineBoutiqueAdmin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineBoutiqueAdmin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

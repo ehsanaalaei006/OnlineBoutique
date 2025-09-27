@@ -9,6 +9,7 @@ namespace OnlineBoutiqueCoreLayer.Services
 {
     public interface ICartService
     {
+        public List<Cart> GetAllCarts();
         public Cart GetCart(int userId);
         public void AddItem(int userId, int productId, string productName, string size, int unitPrice, int amount);
         public void UpdateItemAmount(int userId, int productId, string size, int newAmount);
