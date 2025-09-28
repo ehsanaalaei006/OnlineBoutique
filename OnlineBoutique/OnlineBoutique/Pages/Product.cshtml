@@ -40,35 +40,42 @@
                             </div>
 
                             <!-- Add to Cart Form -->
-                            <form method="post" asp-page-handler="AddToCart">
-                                <input type="hidden" name="productId" value="@Model.item.Id" />
-                                <input type="hidden" name="productName" value="@Model.item.Name" />
-                                <input type="hidden" name="unitPrice" value="@Model.item.Price" />
+                            @if(Model.item.QuantityInStock != 0)
+                            {
+                                <form method="post" asp-page-handler="AddToCart">
+                                    <input type="hidden" name="productId" value="@Model.item.Id" />
+                                    <input type="hidden" name="productName" value="@Model.item.Name" />
+                                    <input type="hidden" name="unitPrice" value="@Model.item.Price" />
 
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="product-size" class="form-label fw-semibold">سایز</label>
-                                        <select name="productSize" id="product-size" class="form-select">
-                                            @foreach (var size in Model.itemSizes)
-                                            {
-                                                <option value="@size">@size</option>
-                                            }
-                                        </select>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="product-size" class="form-label fw-semibold">سایز</label>
+                                            <select name="productSize" id="product-size" class="form-select">
+                                                @foreach (var size in Model.itemSizes)
+                                                {
+                                                    <option value="@size">@size</option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="product-quantity" class="form-label fw-semibold">تعداد</label>
+                                            <input type="number" name="productQuantity" id="product-quantity"
+                                                   class="form-control" value="1" min="1" max="@Model.item.QuantityInStock" />
+                                        </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <label for="product-quantity" class="form-label fw-semibold">تعداد</label>
-                                        <input type="number" name="productQuantity" id="product-quantity"
-                                               class="form-control" value="1" min="1" max="@Model.item.QuantityInStock"/>
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn btn-success w-100 py-2">
+                                            افزودن به سبد خرید
+                                        </button>
                                     </div>
-                                </div>
-
-                                <div class="mt-4">
-                                    <button type="submit" class="btn btn-success w-100 py-2">
-                                        افزودن به سبد خرید
-                                    </button>
-                                </div>
-                            </form>
+                                </form>
+                            }
+                            else
+                            {
+                                <h2 class="text-danger fw-bold align-content-center mb-3">موجود نیست</h2>
+                            }
                         </div>
                     </div>
                 </div>
@@ -100,10 +107,7 @@
                                      src="https://localhost:7049/api/File/GetFile?fileName=@item.ImageUrl"
                                      alt="@item.Name" />
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled padd-r-0">
-                                        <li><a class="btn btn-success text-white"><i class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2"><i class="fas fa-cart-plus"></i></a></li>
-                                    </ul>
+
                                 </div>
                             </div>
                             <div class="card-body text-center px-3 py-4">
