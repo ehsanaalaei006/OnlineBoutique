@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F8E93B45-463F-455A-8EFB-82E4DE90CDEE}|OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutiqueadmin\\controllers\\itemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8E93B45-463F-455A-8EFB-82E4DE90CDEE}|OnlineBoutiqueAdmin\\OnlineBoutiqueAdmin.csproj|solutionrelative:onlineboutiqueadmin\\controllers\\itemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5A38DC-E58C-44E7-B743-052966091DC3}|OnlineBoutiqueCoreLayer\\OnlineBoutiqueCoreLayer.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutiquecorelayer\\services\\file\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5A38DC-E58C-44E7-B743-052966091DC3}|OnlineBoutiqueCoreLayer\\OnlineBoutiqueCoreLayer.csproj|solutionrelative:onlineboutiquecorelayer\\services\\file\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC5A38DC-E58C-44E7-B743-052966091DC3}|OnlineBoutiqueCoreLayer\\OnlineBoutiqueCoreLayer.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutiquecorelayer\\services\\file\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5A38DC-E58C-44E7-B743-052966091DC3}|OnlineBoutiqueCoreLayer\\OnlineBoutiqueCoreLayer.csproj|solutionrelative:onlineboutiquecorelayer\\services\\file\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ItemsController.cs",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueAdmin\\Controllers\\ItemsController.cs",
-              "RelativeDocumentMoniker": "OnlineBoutiqueAdmin\\Controllers\\ItemsController.cs",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueAdmin\\Controllers\\ItemsController.cs",
-              "RelativeToolTip": "OnlineBoutiqueAdmin\\Controllers\\ItemsController.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAAwwMgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T20:41:56.834Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IFileService.cs",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueCoreLayer\\Services\\File\\IFileService.cs",
-              "RelativeDocumentMoniker": "OnlineBoutiqueCoreLayer\\Services\\File\\IFileService.cs",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueCoreLayer\\Services\\File\\IFileService.cs",
-              "RelativeToolTip": "OnlineBoutiqueCoreLayer\\Services\\File\\IFileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T20:40:55.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FileService.cs",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueCoreLayer\\Services\\File\\FileService.cs",
-              "RelativeDocumentMoniker": "OnlineBoutiqueCoreLayer\\Services\\File\\FileService.cs",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutiqueCoreLayer\\Services\\File\\FileService.cs",
-              "RelativeToolTip": "OnlineBoutiqueCoreLayer\\Services\\File\\FileService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCQAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T20:37:12.57Z",
-              "EditorCaption": ""
             }
           ]
         }

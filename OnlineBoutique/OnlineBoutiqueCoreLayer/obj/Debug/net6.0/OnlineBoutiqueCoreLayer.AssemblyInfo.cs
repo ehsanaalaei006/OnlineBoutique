@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineBoutiqueCoreLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9119c836fcd4218dba08c5665955e4b885aa03f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d5101bf6b0026a5176e4f476f0a7addf421dd3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineBoutiqueCoreLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineBoutiqueCoreLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
