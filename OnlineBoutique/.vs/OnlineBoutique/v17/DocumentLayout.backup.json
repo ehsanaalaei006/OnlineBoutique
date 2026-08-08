@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\_relatedproductspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\_relatedproductspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\_productgridpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\_productgridpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|d:\\projects\\onlineboutique\\onlineboutique\\onlineboutique\\pages\\products.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{864B7A19-1943-4B9E-846D-96C29BA16E46}|OnlineBoutique\\OnlineBoutique.csproj|solutionrelative:onlineboutique\\pages\\products.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,63 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Product.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Product.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Product.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Product.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Product.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T12:15:16.386Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Index.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Index.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\Index.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "_ProductGridPartial.cshtml",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
+              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_ProductGridPartial.cshtml*",
+              "RelativeToolTip": "OnlineBoutique\\Pages\\_ProductGridPartial.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T12:15:03.121Z",
+              "WhenOpened": "2026-08-08T01:31:28.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_RelatedProductsPartial.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_RelatedProductsPartial.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\_RelatedProductsPartial.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_RelatedProductsPartial.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\_RelatedProductsPartial.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEkAAACNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T12:14:48.815Z",
+              "Title": "Products.cshtml.cs",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml.cs",
+              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Products.cshtml.cs",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml.cs",
+              "RelativeToolTip": "OnlineBoutique\\Pages\\Products.cshtml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAYwBsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-08T01:28:51.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_ProductGridPartial.cshtml",
-              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "RelativeToolTip": "OnlineBoutique\\Pages\\_ProductGridPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Products.cshtml",
+              "DocumentMoniker": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml",
+              "RelativeDocumentMoniker": "OnlineBoutique\\Pages\\Products.cshtml",
+              "ToolTip": "D:\\Projects\\OnlineBoutique\\OnlineBoutique\\OnlineBoutique\\Pages\\Products.cshtml",
+              "RelativeToolTip": "OnlineBoutique\\Pages\\Products.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADkAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T12:14:36.59Z",
+              "WhenOpened": "2026-08-08T01:28:11.001Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

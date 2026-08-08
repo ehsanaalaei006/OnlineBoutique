@@ -25,7 +25,7 @@ namespace OnlineBoutique.Pages
         public int CurrentPage { get; set; }
         public int? CurrentCategoryId { get; set; }
         public string? CurrentSearch { get; set; }
-        private const int PageSize = 3;
+        private const int PageSize = 12;
 
         // Initial page load
         public async Task OnGetAsync(int? categoryId , string? q)
