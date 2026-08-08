@@ -1,100 +1,234 @@
-# 🛍️ Boutique — ASP.NET Core E-Commerce Platform
 
-[![.NET](https://img.shields.io/badge/ASP.NET%20Core-Multi--App-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/)
-[![C#](https://img.shields.io/badge/C%23-Language-239120?style=for-the-badge&logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
-[![EF Core](https://img.shields.io/badge/Entity%20Framework-Core-68217A?style=for-the-badge&logo=nuget)](https://docs.microsoft.com/en-us/ef/core/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-UI-7952B3?style=for-the-badge&logo=bootstrap)](https://getbootstrap.com/)
-[![Architecture](https://img.shields.io/badge/Architecture-3--Layer-blue?style=for-the-badge)](#-architecture)
+**Boutique** is a modern, modular e-commerce platform built with ASP.NET Core.
 
-**Boutique** is a modern, modular e-commerce platform engineered with ASP.NET Core. Designed with a strict separation of concerns, the project is divided into two distinct applications: a customer-facing **Web Store** built with Razor Pages, and a secure **Admin Panel** driven by ASP.NET Core MVC.
+To ensure maintainability and separation of concerns, the platform is divided into two distinct applications operating on a shared core logic layer:
 
-The system features dynamic inventory tracking, asynchronous pagination, and a highly decoupled backend architecture.
-
----
-
-## 📸 Screenshots
-<img width="1100" height="820" alt="Screenshot 2026-08-08 050650" src="https://github.com/user-attachments/assets/b5b6290b-6a9b-4ea9-a5a8-20aef898ea42" />
-<img width="1718" height="859" alt="Screenshot 2026-08-08 050722" src="https://github.com/user-attachments/assets/42f4471d-90ef-4fde-a1e8-cdbf31cb9bf1" />
-<img width="1896" height="912" alt="Screenshot 2026-08-08 050621" src="https://github.com/user-attachments/assets/f2529552-2677-4a9a-9741-334618d4a9af" />
-<img width="1699" height="735" alt="Screenshot 2026-08-08 050813" src="https://github.com/user-attachments/assets/563a0257-e24a-4599-949c-cfee918826b2" />
-
-
-
+1. **Web Store:** A customer-facing shopping interface built with **ASP.NET Core Razor Pages**.
+2. **Admin Panel:** A dedicated management dashboard built with **ASP.NET Core MVC** for store and inventory administration.
 
 ---
 
 ## ✨ Features
 
-* **Dual-Application Architecture:** Separate presentation layers for customers (Razor Pages) and administrators (MVC).
-* **Dynamic Inventory Calculation:** Product stock is calculated in real-time, factoring in items currently held in active user carts.
-* **Fluid Pagination:** Catalog browsing utilizes JavaScript and asynchronous data fetching to paginate results without requiring full-page reloads.
-* **Responsive UI:** Built with Bootstrap to ensure a seamless shopping experience across mobile, tablet, and desktop devices.
-* **Granular Product Filtering:** Deeply nested category and subcategory filtering combined with robust search capabilities.
+* **Dual-Application Architecture:** Separate routing, views, and controllers for administrators and customers.
+* **Separation of Concerns:** Strict adherence to a 3-layer architecture, isolating database operations from the presentation layer.
+* **Dynamic Stock Management:** Real-time calculation of available product quantities based on items currently held in active user carts.
+* **Asynchronous Pagination:** Seamless UI updates for product grids using JavaScript and AJAX, eliminating full-page reloads.
+* **Responsive UI:** Built with Bootstrap for a fluid mobile and desktop experience.
 
 ---
 
-## 🏗 Architecture
+## 🏗️ Architecture
 
-This solution adheres to a **Three-Layer Architecture**, enforcing a strict separation of concerns between data persistence, business logic, and presentation. 
+The solution implements a strict **Three-Layer Architecture**. The Web and Admin applications are entirely decoupled from the database layer, communicating solely through interfaces exposed by the Core layer.
 
-A core principle of this project is that the presentation layers (**Web Store** and **Admin Panel**) **never** communicate directly with Entity Framework Core or the database. All data access and business rules are abstracted behind interfaces provided by the Core layer.
+### 1. Data Layer
 
-### Layer Responsibilities
+Responsible for all data access and persistence mechanics. It contains the Entity Framework Core `DbContext`, domain entity classes, database configuration logic, and EF Core migrations.
 
-1. **Web / Presentation Layer:** Consumes Core layer interfaces. Handles HTTP requests, UI rendering, and user input validation.
-2. **Core Layer:** The business engine. Contains DTOs, domain abstractions, and Service implementations (e.g., `ItemService`, `CategoryService`, `FileService`).
-3. **Data Layer:** Manages persistence. Houses the domain entities, EF Core `DbContext`, database configurations, and migrations.
+### 2. Core Layer
+
+Acts as the central business logic hub. It contains Data Transfer Objects (DTOs), service implementations, and abstract interfaces (`IItemService`, `IFileService`, `ICategoryService`).
+
+### 3. Web & Admin Layers (Presentation)
+
+Handles HTTP requests, routing, and UI rendering via Razor Pages and MVC. These layers inject Core interfaces via Dependency Injection (DI) and never query Entity Framework directly.
 
 ### Architecture Diagram
 
 ```text
-       [ Boutique.Web (Razor Pages) ]     [ Boutique.Admin (MVC) ]
-                    │                                │
-                    └───────────────┬────────────────┘
-                                    │ (Depends on Interfaces)
-                                    ▼
-       [ Boutique.Core (Services, DTOs, Interfaces) ]
-                                    │
-                                    │ (Depends on Entities/EF)
-                                    ▼
-       [ Boutique.Data (EF Core, DbContext, Migrations) ]
-                                    │
-                                    ▼
-                             [ Database ]
-📂 Project StructurePlaintextBoutique-Solution/
+       +-------------------------+      +-------------------------+
+       |       Web Store         |      |       Admin Panel       |
+       |     (Razor Pages)       |      |     (ASP.NET MVC)       |
+       +-------------------------+      +-------------------------+
+                    |                                |
+                    +---------------+----------------+
+                                    |
+                                    v
+       +----------------------------------------------------------+
+       |                        Core Layer                        |
+       |  (DTOs, ItemService, CategoryService, FileService, etc.) |
+       +----------------------------------------------------------+
+                                    |
+                                    v
+       +----------------------------------------------------------+
+       |                        Data Layer                        |
+       |   (Entities, EF Core DbContext, Migrations, Repositories)|
+       +----------------------------------------------------------+
+                                    |
+                                    v
+                          +-------------------+
+                          | Relational Engine |
+                          |   (SQL Database)  |
+                          +-------------------+
+
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+Boutique/
 ├── src/
-│   ├── Boutique.Data/                  # Data access & persistence
-│   │   ├── Entities/                   # Database entity classes
-│   │   ├── Context/                    # EF Core DbContext
-│   │   └── Migrations/                 # Entity Framework migrations
+│   ├── Boutique.Core/                 # Business logic, DTOs, and Interfaces
+│   │   ├── DTOs/
+│   │   ├── Interfaces/                # IItemService, ICategoryService, etc.
+│   │   └── Services/                  # Concrete service implementations
 │   │
-│   ├── Boutique.Core/                  # Business logic & abstractions
-│   │   ├── DTOs/                       # Data Transfer Objects
-│   │   ├── Interfaces/                 # Service contracts (IItemService, etc.)
-│   │   └── Services/                   # Business logic implementations
+│   ├── Boutique.Data/                 # Persistence and Entity Framework
+│   │   ├── Context/                   # ApplicationDbContext
+│   │   ├── Entities/                  # Database models
+│   │   └── Migrations/                # EF Core migrations
 │   │
-│   ├── Boutique.Admin/                 # Admin Panel (Presentation)
-│   │   ├── Controllers/                # MVC Controllers
-│   │   ├── Views/                      # MVC Views
-│   │   └── appsettings.json
+│   ├── Boutique.Web/                  # Customer-facing Razor Pages app
+│   │   ├── Pages/                     # Razor pages (Index, Product, Cart)
+│   │   └── wwwroot/                   # JS, CSS, and Bootstrap assets
 │   │
-│   └── Boutique.Web/                   # Web Store (Presentation)
-│       ├── Pages/                      # Razor Pages
-│       ├── wwwroot/                    # Static assets (JS, CSS, Bootstrap)
-│       └── appsettings.json
+│   └── Boutique.Admin/                # Management MVC app
+│       ├── Controllers/               # MVC Controllers
+│       └── Views/                     # MVC Views
 │
 ├── .gitignore
-├── Boutique.sln                        # Solution file
+├── Boutique.sln
 └── README.md
-🛠 TechnologiesDomainTechnologies UsedFrameworksASP.NET Core, ASP.NET Core MVC, Razor PagesLanguageC#Data AccessEntity Framework CoreDatabaseRelational SQL Database (Configured via EF Core)FrontendBootstrap, HTML5, CSS3, JavaScript (AJAX/Fetch)Architecture3-Layer Architecture, Dependency Injection, DTO Pattern🔐 Authentication & User AccountsSecurity and identity management are powered by native ASP.NET Core Authentication.Account Management: Users can securely register and log in to the platform.Session State: Authenticated users are assigned personalized, persistent shopping carts tied directly to their accounts.👕 Product & Category SystemThe application features a robust catalog management system designed for clothing and retail:Hierarchical Organization: Products are mapped to a dynamic structure of Categories and Subcategories.Variant Support: Products support variant sizing, allowing customers to select specific sizes before adding to their cart.Search & Discovery: Integrated search functionality combined with category filtering makes finding specific items frictionless.🛒 Shopping CartThe shopping cart acts as a dynamic state engine for authenticated users:Cart Operations: Users can add multiple items, specify sizes, adjust quantities, or remove products entirely.Real-time Totals: The cart dynamically calculates financial totals based on current quantities.Smart Stock Tracking: The system prevents overselling by dynamically reflecting available stock based on what is actively sitting in users' carts system-wide.🚀 Installation / SetupPrerequisites.NET SDK (Version compatible with the project, e.g., .NET 8.0)SQL Database Server (e.g., SQL Server, LocalDB)Git1. Clone the RepositoryBashgit clone <repository-url>
-cd <project-directory>
-2. Configure Database ConnectionsNavigate to the presentation layer projects and update the connection strings to point to your local database instance.Update Boutique.Web/appsettings.json:JSON"ConnectionStrings": {
-  "DefaultConnection": "Server=YOUR_SERVER;Database=BoutiqueDb;Trusted_Connection=True;TrustServerCertificate=True;"
+
+```
+
+---
+
+## 🛠️ Technologies
+
+| Component | Technology |
+| --- | --- |
+| **Framework** | .NET 8, C# |
+| **Customer Web App** | ASP.NET Core Razor Pages |
+| **Admin Web App** | ASP.NET Core MVC |
+| **ORM / Data Access** | Entity Framework Core (Code-First) |
+| **Database** | SQL Server / Relational Database |
+| **Frontend / UI** | Bootstrap, HTML5, CSS3 |
+| **Client-Side Logic** | JavaScript, AJAX |
+
+---
+
+## 🔐 Authentication & User Accounts
+
+The platform leverages native ASP.NET Core Authentication to manage identity and access control:
+
+* **Registration & Login:** Secure user authentication flows.
+* **Session Management:** Authenticated users are assigned personalized, persistent shopping carts tied to their account identity.
+* **Authorization:** Administrative routes are securely isolated from standard user accounts.
+
+---
+
+## 📦 Product & Category System
+
+The catalog is designed for deep hierarchical organization and robust searchability:
+
+* **Nested Categories:** Products are organized into primary categories and deeper subcategories for refined browsing.
+* **Search & Filtering:** Users can filter the catalog through the category tree or utilize text-based search.
+* **Variant Support:** Products support variant sizing, allowing customers to select specific sizes prior to purchase.
+
+---
+
+## 🛒 Shopping Cart & Dynamic Inventory
+
+A highly interactive shopping cart system ensures accurate inventory representation:
+
+* **Per-User Carts:** Authenticated users manage their own dedicated cart state.
+* **Cart Operations:** Users can add items, specify sizes, adjust quantities, remove items, and view real-time price calculations.
+* **Dynamic Stock Calculation:** To prevent overselling, the application dynamically calculates available product stock by deducting quantities currently held in active users' shopping carts across the platform.
+
+---
+
+## ⚙️ Installation / Setup
+
+### Prerequisites
+
+* [.NET 8.0 SDK](https://www.google.com/search?q=https://dotnet.microsoft.com/download)
+* A local SQL Database engine (e.g., SQL Server LocalDB)
+* Visual Studio, VS Code, or Rider
+
+### Clone the Repository
+
+```bash
+git clone [https://github.com/ehsanaalaei006/boutique-ecommerce-aspnet.git](https://github.com/ehsanaalaei006/boutique-ecommerce-aspnet.git)
+cd boutique-ecommerce-aspnet
+
+```
+
+---
+
+## 🗄️ Database Setup
+
+1. Open the `appsettings.json` file in both `Boutique.Web` and `Boutique.Admin` and ensure the connection string points to your local database instance:
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=BoutiqueDb;Trusted_Connection=True;"
 }
-(Repeat for Boutique.Admin/appsettings.json if it uses a separate configuration).🗄️ Database SetupThe project uses Entity Framework Core Code-First migrations. To generate the database schema, run the EF Core CLI tools.Bash# Navigate to the Data project or run from solution root specifying the project
+
+```
+
+
+2. Apply the Entity Framework Core migrations to construct the database schema. Open your terminal in the solution root and run:
+```bash
 dotnet ef database update --project src/Boutique.Data --startup-project src/Boutique.Web
-⚙️ Running the ProjectBecause the solution contains two separate web applications, you can run them simultaneously or individually depending on your needs.To run the Web Storefront:Bashcd src/Boutique.Web
-dotnet run
-Navigate to https://localhost:<port> to view the store.To run the Admin Panel:Bashcd src/Boutique.Admin
-dotnet run
-Navigate to the assigned local port to access the management dashboard.🔮 Future Improvements[ ] Integrate a third-party payment gateway (e.g., Stripe or PayPal).[ ] Implement an automated email notification system for order confirmations.[ ] Add caching (e.g., Redis or In-Memory) to optimize category and product catalog load times.[ ] Introduce an order history and tracking dashboard for users.🤝 ContributingContributions are welcome! If you would like to improve the project:Fork the RepositoryCreate your Feature Branch (git checkout -b feature/AmazingFeature)Commit your Changes (git commit -m 'Add some AmazingFeature')Push to the Branch# 🛍️ Boutique
+
+```
+
+
+
+---
+
+## 🚀 Running the Project
+
+Because the project consists of two separate web applications, you can run them concurrently or individually.
+
+**To run the Web Store (Razor Pages):**
+
+```bash
+dotnet run --project src/Boutique.Web
+
+```
+
+**To run the Admin Panel (MVC):**
+
+```bash
+dotnet run --project src/Boutique.Admin
+
+```
+
+Navigate to `https://localhost:<port>` in your browser to view the application.
+
+---
+
+## 📸 Screenshots
+
+<img width="1100" height="820" alt="Screenshot 2026-08-08 050650" src="https://github.com/user-attachments/assets/b5b6290b-6a9b-4ea9-a5a8-20aef898ea42" />
+<img width="1718" height="859" alt="Screenshot 2026-08-08 050722" src="https://github.com/user-attachments/assets/42f4471d-90ef-4fde-a1e8-cdbf31cb9bf1" />
+<img width="1896" height="912" alt="Screenshot 2026-08-08 050621" src="https://github.com/user-attachments/assets/f2529552-2677-4a9a-9741-334618d4a9af" />
+<img width="1699" height="735" alt="Screenshot 2026-08-08 050813" src="https://github.com/user-attachments/assets/563a0257-e24a-4599-949c-cfee918826b2" />
+
+---
+
+## 🔮 Future Improvements
+
+* Integrate a third-party payment gateway (e.g., Stripe) for checkout processing.
+* Implement a caching layer (MemoryCache/Redis) for category trees and heavily accessed product catalogs.
+* Add unit and integration tests for Core services and Data repositories.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3. Commit your Changes (`git commit -m 'feat: Add NewFeature'`)
+4. Push to the Branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
